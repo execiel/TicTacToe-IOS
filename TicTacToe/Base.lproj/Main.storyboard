@@ -28,6 +28,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msU-WU-FBi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFv-88-rqc">
                                                 <rect key="frame" x="119.66666666666669" y="0.0" width="114.33333333333331" height="114.66666666666667"/>
@@ -35,6 +38,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V3G-Jp-rus"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vn8-sX-zt3">
                                                 <rect key="frame" x="239.00000000000003" y="0.0" width="114.66666666666666" height="114.66666666666667"/>
@@ -42,6 +48,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZnM-e1-eFG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -54,6 +63,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZoN-IO-e88"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRn-Z1-LUW">
                                                 <rect key="frame" x="119.66666666666669" y="0.0" width="114.33333333333331" height="114.33333333333333"/>
@@ -61,6 +73,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zs8-Oe-xq9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtR-QQ-HfA">
                                                 <rect key="frame" x="239.00000000000003" y="0.0" width="114.66666666666666" height="114.33333333333333"/>
@@ -68,6 +83,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vx5-Ch-wKN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -80,6 +98,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TKm-aa-Zyr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUb-GP-x3o">
                                                 <rect key="frame" x="119.66666666666669" y="0.0" width="114.33333333333331" height="114.66666666666667"/>
@@ -87,6 +108,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tdW-dX-FiR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-HU-nxI">
                                                 <rect key="frame" x="239.00000000000003" y="0.0" width="114.66666666666666" height="114.66666666666667"/>
@@ -94,6 +118,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="cellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FYb-5d-yUV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -103,8 +130,8 @@
                                     <constraint firstAttribute="width" secondItem="6mJ-7r-4ae" secondAttribute="height" multiplier="1:1" id="5OG-jd-RN9"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="X's Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWW-X2-Pnj">
-                                <rect key="frame" x="146" y="132" width="88" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="X's Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHI-1x-ObB">
+                                <rect key="frame" x="152" y="168" width="88" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -115,20 +142,29 @@
                         <constraints>
                             <constraint firstItem="6mJ-7r-4ae" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="84b-l6-Xga"/>
                             <constraint firstItem="6mJ-7r-4ae" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="C6l-Ib-Bcb"/>
-                            <constraint firstItem="LWW-X2-Pnj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Eda-PG-nIg"/>
                             <constraint firstItem="6mJ-7r-4ae" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="FRK-xc-IoY"/>
                             <constraint firstItem="6mJ-7r-4ae" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fm4-GB-zF0"/>
+                            <constraint firstItem="aHI-1x-ObB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="Zel-Qq-rh9"/>
+                            <constraint firstItem="aHI-1x-ObB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pLf-si-WsE"/>
                             <constraint firstItem="6mJ-7r-4ae" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xXi-N2-4Ex"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="a1" destination="oVQ-6p-Nfi" id="8Dz-yz-usg"/>
-                        <outlet property="turnLabel" destination="LWW-X2-Pnj" id="ulc-Qp-1fx"/>
+                        <outlet property="a2" destination="LFv-88-rqc" id="Qlc-UK-45z"/>
+                        <outlet property="a3" destination="vn8-sX-zt3" id="MIw-rX-fuQ"/>
+                        <outlet property="b1" destination="sq3-ap-BhE" id="E2g-wD-jiQ"/>
+                        <outlet property="b2" destination="fRn-Z1-LUW" id="SxZ-iR-7If"/>
+                        <outlet property="b3" destination="WtR-QQ-HfA" id="bxI-ke-wp6"/>
+                        <outlet property="c1" destination="nXB-EX-c9q" id="DD3-3F-AE1"/>
+                        <outlet property="c2" destination="fUb-GP-x3o" id="pzG-C4-wgv"/>
+                        <outlet property="c3" destination="0iQ-HU-nxI" id="plC-Jo-fai"/>
+                        <outlet property="turnLabel" destination="aHI-1x-ObB" id="WoR-us-49T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="-2"/>
+            <point key="canvasLocation" x="43.511450381679388" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
