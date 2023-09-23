@@ -150,16 +150,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="a1" destination="oVQ-6p-Nfi" id="8Dz-yz-usg"/>
-                        <outlet property="a2" destination="LFv-88-rqc" id="Qlc-UK-45z"/>
-                        <outlet property="a3" destination="vn8-sX-zt3" id="MIw-rX-fuQ"/>
-                        <outlet property="b1" destination="sq3-ap-BhE" id="E2g-wD-jiQ"/>
-                        <outlet property="b2" destination="fRn-Z1-LUW" id="SxZ-iR-7If"/>
-                        <outlet property="b3" destination="WtR-QQ-HfA" id="bxI-ke-wp6"/>
-                        <outlet property="c1" destination="nXB-EX-c9q" id="DD3-3F-AE1"/>
-                        <outlet property="c2" destination="fUb-GP-x3o" id="pzG-C4-wgv"/>
-                        <outlet property="c3" destination="0iQ-HU-nxI" id="plC-Jo-fai"/>
                         <outlet property="turnLabel" destination="aHI-1x-ObB" id="WoR-us-49T"/>
+                        <outletCollection property="boardCells" destination="oVQ-6p-Nfi" collectionClass="NSMutableArray" id="FTD-Xk-0qK"/>
+                        <outletCollection property="boardCells" destination="LFv-88-rqc" collectionClass="NSMutableArray" id="jqE-gk-t43"/>
+                        <outletCollection property="boardCells" destination="vn8-sX-zt3" collectionClass="NSMutableArray" id="fiA-FK-v8C"/>
+                        <outletCollection property="boardCells" destination="sq3-ap-BhE" collectionClass="NSMutableArray" id="LW4-fs-zcG"/>
+                        <outletCollection property="boardCells" destination="fRn-Z1-LUW" collectionClass="NSMutableArray" id="0Te-Lu-W8F"/>
+                        <outletCollection property="boardCells" destination="WtR-QQ-HfA" collectionClass="NSMutableArray" id="Uc2-Oy-fUZ"/>
+                        <outletCollection property="boardCells" destination="nXB-EX-c9q" collectionClass="NSMutableArray" id="17Y-99-E6u"/>
+                        <outletCollection property="boardCells" destination="fUb-GP-x3o" collectionClass="NSMutableArray" id="CAM-UX-rXT"/>
+                        <outletCollection property="boardCells" destination="0iQ-HU-nxI" collectionClass="NSMutableArray" id="Kdz-gu-1vl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

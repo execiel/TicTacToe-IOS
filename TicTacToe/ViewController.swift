@@ -10,31 +10,40 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var turnLabel: UILabel!
-    @IBOutlet weak var a1: UIButton!
-    @IBOutlet weak var a2: UIButton!
-    @IBOutlet weak var a3: UIButton!
-    @IBOutlet weak var b1: UIButton!
-    @IBOutlet weak var b2: UIButton!
-    @IBOutlet weak var b3: UIButton!
-    @IBOutlet weak var c1: UIButton!
-    @IBOutlet weak var c2: UIButton!
-    @IBOutlet weak var c3: UIButton!
     
+    @IBOutlet var boardCells: [UIButton]!
+    // The players marks
     let PLAYER1_MARK = "X";
     let PLAYER2_MARK = "O";
     
     var currentTurn: String = "";
+    var board = [UIButton]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        currentTurn = "X";
         print("Started app")
+        currentTurn = "X";
     }
-
+    
     @IBAction func cellTapped(_ sender: UIButton) {
         print("Button tapped")
+        
+        // Add the mark
         addMark(sender);
+        
+        // Check if board is full
+        if(isBoardFull()) {
+            turnLabel.text = "Board is full, it's a draw!"
+        }
+    }
+    
+    // Checks if board is full
+    func isBoardFull() -> Bool {
+        for cell in boardCells {
+            if(cell.title(for: .normal) == nil) { return false }
+        }
+        return true
     }
     
     func addMark(_ sender: UIButton) {
@@ -45,12 +54,13 @@ class ViewController: UIViewController {
         
         // Change button title and font
         sender.setTitle(currentTurn, for: .normal)
-        sender.isEnabled = false
+        
+        // Disables animations
+        // sender.isEnabled = false
         
         // Switch turn
         currentTurn = currentTurn == PLAYER1_MARK ? PLAYER2_MARK : PLAYER1_MARK
         turnLabel.text = "\(currentTurn)'s Turn"
-        
     }
     
 }
