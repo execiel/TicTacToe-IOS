@@ -12,125 +12,84 @@ class ViewController: UIViewController {
     @IBOutlet weak var turnLabel: UILabel!
     @IBOutlet var boardCells: [UIButton]!
     
-    // The players marks
-    let PLAYER1_MARK = "X";
-    let PLAYER2_MARK = "O";
+    let boardUtil = BoardUtil()
     
-    var currentTurn: String = "";
+    // Define the players
+    let player1 = Player(name: "Vincent", mark: "X")
+    let player2 = Player(name: "William", mark: "O")
+    
+    // TODO: remove this
+    var currentPlayer: Player = Player(name: "temp", mark: "temp")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("Started app")
-        currentTurn = "X";
+        
+        currentPlayer = player1
+        turnLabel.text = "\(currentPlayer.name)'s Turn"
     }
     
     @IBAction func cellTapped(_ sender: UIButton) {
         print("Button tapped")
         
-        var lastTurn = currentTurn
+        let lastPlayer = currentPlayer
         
         // Add the mark
-        addMark(sender);
+        addMark(sender)
         
         // Check if current player won
-        if(hasPlayerWon(lastTurn)) {
-            turnLabel.text = "\(lastTurn) won!"
+        if(boardUtil.hasPlayerWon(boardCells, lastPlayer.mark)) {
+            turnLabel.text = "\(lastPlayer.name) won!"
+            createResetSheet()
             return
         }
         
         // Check if board is full
-        if(isBoardFull()) {
+        if(boardUtil.isBoardFull(boardCells)) {
             turnLabel.text = "Board is full, it's a draw!"
+            createResetSheet()
             return
         }
         
     }
     
-    func hasPlayerWon(_ mark: String) -> Bool {
-        // Horizontal conditions
-        if(hasMark(boardCells[0], mark) &&
-           hasMark(boardCells[1], mark) &&
-           hasMark(boardCells[2], mark) ) {
-            return true
-        }
-        
-        if(hasMark(boardCells[3], mark) &&
-           hasMark(boardCells[4], mark) &&
-           hasMark(boardCells[5], mark) ) {
-            return true
-        }
-        
-        if(hasMark(boardCells[6], mark) &&
-           hasMark(boardCells[7], mark) &&
-           hasMark(boardCells[8], mark) ) {
-            return true
-        }
-        
-        // Vertical conditions
-        if(hasMark(boardCells[0], mark) &&
-           hasMark(boardCells[3], mark) &&
-           hasMark(boardCells[6], mark) ) {
-            return true
-        }
-        
-        if(hasMark(boardCells[1], mark) &&
-           hasMark(boardCells[4], mark) &&
-           hasMark(boardCells[7], mark) ) {
-            return true
-        }
-        
-        if(hasMark(boardCells[2], mark) &&
-           hasMark(boardCells[5], mark) &&
-           hasMark(boardCells[8], mark) ) {
-            return true
-        }
-        
-        // Diagonal contitions
-        if(hasMark(boardCells[0], mark) &&
-           hasMark(boardCells[4], mark) &&
-           hasMark(boardCells[8], mark) ) {
-            return true
-        }
-        
-        if(hasMark(boardCells[2], mark) &&
-           hasMark(boardCells[4], mark) &&
-           hasMark(boardCells[6], mark) ) {
-            return true
-        }
-        
-        return false;
-    }
-    
-    func hasMark(_ cell: UIButton, _ mark: String) -> Bool {
-        if(cell.title(for: .normal) == mark) {
-            return true
-        }
-        
-        return false
-    }
-    
-    // Checks if board is full
-    func isBoardFull() -> Bool {
-        for cell in boardCells {
-            if(cell.title(for: .normal) == nil) { return false }
-        }
-        return true
-    }
-    
     func addMark(_ sender: UIButton) {
-        print(currentTurn)
-        
         // Only continue if board is empty
         if(sender.title(for: .normal) != nil) { return }
         
         // Change button title and font
         sender.setTitleColor(UIColor.red, for: .normal)
-        sender.setTitle(currentTurn, for: .normal)
+        sender.setTitle(currentPlayer.mark, for: .normal)
         
-        // Switch turn
-        currentTurn = currentTurn == PLAYER1_MARK ? PLAYER2_MARK : PLAYER1_MARK
-        turnLabel.text = "\(currentTurn)'s Turn"
+        switchTurn()
+    }
+    
+    // Create actionsheet asking if players want to continue
+    func createResetSheet() {
+        let actionSheet = UIAlertController(title: "Play Again?", message: nil, preferredStyle: .actionSheet)
+        
+        // Reset game if yes
+        actionSheet.addAction(UIAlertAction(title: "Yes!", style: .default, handler: { action in
+            self.reset()
+        }))
+        
+        // Quit game if no
+        actionSheet.addAction(UIAlertAction(title: "No.", style: .default, handler: { action in
+            exit(0)
+        }))
+        
+        present(actionSheet, animated: true)
+    }
+    
+    func reset() {
+        boardUtil.resetCells(boardCells)
+        switchTurn()
+    }
+    
+    func switchTurn() {
+        currentPlayer = currentPlayer.mark == player1.mark ? player2 : player1
+        turnLabel.text = "\(currentPlayer.name)'s Turn"
     }
     
 }
