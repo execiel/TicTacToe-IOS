@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		B387A1522ABEF63500F2F935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387A1512ABEF63500F2F935 /* AppDelegate.swift */; };
 		B387A1542ABEF63500F2F935 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387A1532ABEF63500F2F935 /* SceneDelegate.swift */; };
-		B387A1562ABEF63500F2F935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387A1552ABEF63500F2F935 /* ViewController.swift */; };
+		B387A1562ABEF63500F2F935 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387A1552ABEF63500F2F935 /* GameViewController.swift */; };
 		B387A1592ABEF63500F2F935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B387A1572ABEF63500F2F935 /* Main.storyboard */; };
 		B387A15B2ABEF63600F2F935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B387A15A2ABEF63600F2F935 /* Assets.xcassets */; };
 		B387A15E2ABEF63600F2F935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B387A15C2ABEF63600F2F935 /* LaunchScreen.storyboard */; };
 		B387A1692ABEF63600F2F935 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387A1682ABEF63600F2F935 /* TicTacToeTests.swift */; };
 		B387A1732ABEF63600F2F935 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387A1722ABEF63600F2F935 /* TicTacToeUITests.swift */; };
 		B387A1752ABEF63600F2F935 /* TicTacToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387A1742ABEF63600F2F935 /* TicTacToeUITestsLaunchTests.swift */; };
+		B38D5B832AC455B700298772 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38D5B822AC455B700298772 /* MenuViewController.swift */; };
+		B38D5B852AC4591D00298772 /* NameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38D5B842AC4591D00298772 /* NameSelectViewController.swift */; };
 		B3A33B772AC1C256003F27D5 /* BoardUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A33B762AC1C256003F27D5 /* BoardUtil.swift */; };
 		B3A33B792AC1C850003F27D5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A33B782AC1C850003F27D5 /* Player.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +43,7 @@
 		B387A14E2ABEF63500F2F935 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B387A1512ABEF63500F2F935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B387A1532ABEF63500F2F935 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B387A1552ABEF63500F2F935 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B387A1552ABEF63500F2F935 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B387A1582ABEF63500F2F935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B387A15A2ABEF63600F2F935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B387A15D2ABEF63600F2F935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		B387A16E2ABEF63600F2F935 /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B387A1722ABEF63600F2F935 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		B387A1742ABEF63600F2F935 /* TicTacToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B38D5B822AC455B700298772 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B38D5B842AC4591D00298772 /* NameSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSelectViewController.swift; sourceTree = "<group>"; };
 		B3A33B762AC1C256003F27D5 /* BoardUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUtil.swift; sourceTree = "<group>"; };
 		B3A33B782AC1C850003F27D5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,13 +109,15 @@
 			children = (
 				B387A1512ABEF63500F2F935 /* AppDelegate.swift */,
 				B387A1532ABEF63500F2F935 /* SceneDelegate.swift */,
-				B387A1552ABEF63500F2F935 /* ViewController.swift */,
+				B387A1552ABEF63500F2F935 /* GameViewController.swift */,
 				B3A33B782AC1C850003F27D5 /* Player.swift */,
 				B387A1572ABEF63500F2F935 /* Main.storyboard */,
 				B387A15A2ABEF63600F2F935 /* Assets.xcassets */,
 				B387A15C2ABEF63600F2F935 /* LaunchScreen.storyboard */,
 				B387A15F2ABEF63600F2F935 /* Info.plist */,
 				B3A33B762AC1C256003F27D5 /* BoardUtil.swift */,
+				B38D5B822AC455B700298772 /* MenuViewController.swift */,
+				B38D5B842AC4591D00298772 /* NameSelectViewController.swift */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -265,8 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A33B772AC1C256003F27D5 /* BoardUtil.swift in Sources */,
-				B387A1562ABEF63500F2F935 /* ViewController.swift in Sources */,
+				B38D5B832AC455B700298772 /* MenuViewController.swift in Sources */,
+				B387A1562ABEF63500F2F935 /* GameViewController.swift in Sources */,
 				B387A1522ABEF63500F2F935 /* AppDelegate.swift in Sources */,
+				B38D5B852AC4591D00298772 /* NameSelectViewController.swift in Sources */,
 				B3A33B792AC1C850003F27D5 /* Player.swift in Sources */,
 				B387A1542ABEF63500F2F935 /* SceneDelegate.swift in Sources */,
 			);

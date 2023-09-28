@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     
     @IBOutlet weak var turnLabel: UILabel!
     @IBOutlet var boardCells: [UIButton]!
@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     let boardUtil = BoardUtil()
     
     // Define the players
-    let player1 = Player(name: "Vincent", mark: "X")
-    let player2 = Player(name: "William", mark: "O")
+    var player1: Player = Player(name: "temp1", mark: "X");
+    var player2: Player = Player(name: "temp2", mark: "O")
     
     // TODO: remove this
     var currentPlayer: Player = Player(name: "temp", mark: "temp")
