@@ -8,29 +8,28 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
+    
+    var onePlayerTapped = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onOnePlayerTapped(_ sender: Any) { onePlayerTapped = true; }
     
-    
-    /* @IBAction func onTwoPlayerClicked(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NameSelectViewController") as! NameSelectViewController
-        self.present(nextViewController, animated: false, completion: nil)
-    } */
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if(!onePlayerTapped) { return }
+        
+        let gameView = segue.destination as! GameViewController
+        
+        gameView.isAgainstBot = true
+        
+        gameView.player1 = Player(name: "Player", mark: "X")
+        gameView.player2 = Player(name: "Bot", mark: "O")
+        
+        onePlayerTapped = false
     }
-    */
-
+     
 }

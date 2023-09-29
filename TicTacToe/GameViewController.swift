@@ -14,8 +14,11 @@ class GameViewController: UIViewController {
     
     let boardUtil = BoardUtil()
     
-    // Define the players
-    var player1: Player = Player(name: "temp1", mark: "X");
+    // Controlls if the game is against a bot or not
+    var isAgainstBot: Bool = false
+    
+    // Define the players with temporary names
+    var player1: Player = Player(name: "temp1", mark: "X")
     var player2: Player = Player(name: "temp2", mark: "O")
     
     // TODO: remove this
@@ -28,30 +31,22 @@ class GameViewController: UIViewController {
         
         currentPlayer = player1
         turnLabel.text = "\(currentPlayer.name)'s Turn"
+        
+        // Reset the cells
+        boardUtil.resetCells(boardCells)
     }
     
     @IBAction func cellTapped(_ sender: UIButton) {
-        print("Button tapped")
+        if(isAgainstBot && currentPlayer.name == "Bot") { return }
         
         let lastPlayer = currentPlayer
         
         // Add the mark
         addMark(sender)
+        if(checkForWinOrDraw(lastPlayer)) { return }
         
-        // Check if current player won
-        if(boardUtil.hasPlayerWon(boardCells, lastPlayer.mark)) {
-            turnLabel.text = "\(lastPlayer.name) won!"
-            createResetSheet()
-            return
-        }
-        
-        // Check if board is full
-        if(boardUtil.isBoardFull(boardCells)) {
-            turnLabel.text = "Board is full, it's a draw!"
-            createResetSheet()
-            return
-        }
-        
+        // Create the bots turn
+        if(isAgainstBot) { addBotMark() }
     }
     
     func addMark(_ sender: UIButton) {
@@ -59,10 +54,57 @@ class GameViewController: UIViewController {
         if(sender.title(for: .normal) != nil) { return }
         
         // Change button title and font
-        sender.setTitleColor(UIColor.red, for: .normal)
+        if(currentPlayer.mark == "X") {
+            sender.setTitleColor(UIColor.red, for: .normal)
+        } else {
+            sender.setTitleColor(UIColor.green, for: .normal)
+        }
         sender.setTitle(currentPlayer.mark, for: .normal)
         
+        // Switch turn
         switchTurn()
+    }
+    
+    func addBotMark() {
+        if(currentPlayer.name == "Player") { return }
+        
+        var tilePlaced = false
+        
+        // Place a mark on random empty cell
+        while(!tilePlaced) {
+            let cellIndex = Int.random(in: 0...8)
+            let cell = boardCells[cellIndex]
+            
+            if(cell.title(for: .normal) == nil) {
+                cell.setTitleColor(UIColor.green, for: .normal)
+                cell.setTitle(currentPlayer.mark, for: .normal)
+                tilePlaced = true;
+            }
+        }
+        
+        // Check if it resulted in a win or draw
+        if(checkForWinOrDraw(currentPlayer)) { return }
+        
+        // Switch the turn
+        switchTurn()
+    }
+    
+    func checkForWinOrDraw(_ player: Player) -> Bool {
+        // Check if current player won
+        if(boardUtil.hasPlayerWon(boardCells, player.mark)) {
+            turnLabel.text = "\(player.name) won!"
+            createResetSheet()
+            return true
+        }
+        
+        // Check if board is full
+        if(boardUtil.isBoardFull(boardCells)) {
+            turnLabel.text = "Board is full, it's a draw!"
+            createResetSheet()
+            return true
+        }
+        
+        return false
     }
     
     // Create actionsheet asking if players want to continue

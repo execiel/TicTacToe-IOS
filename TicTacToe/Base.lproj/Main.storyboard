@@ -37,6 +37,10 @@
                                         <rect key="frame" x="0.0" y="126.33333333333336" width="163" height="34.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="One Player"/>
+                                        <connections>
+                                            <action selector="onOnePlayerTapped:" destination="YZk-VD-xxY" eventType="touchUpInside" id="Psp-4j-Lx2"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="D8f-m3-U4B"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9z-km-0md">
                                         <rect key="frame" x="0.0" y="188.66666666666663" width="163" height="34.333333333333343"/>
@@ -311,6 +315,9 @@
             <point key="canvasLocation" x="-724.4274809160305" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D8f-m3-U4B"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -24,6 +24,9 @@ class NameSelectViewController: UIViewController {
         
         let gameView = segue.destination as! GameViewController
         
+        // Reset incase game restarts from menu
+        gameView.isAgainstBot = false
+        
         gameView.player1 = Player(name: player1Name, mark: "X")
         gameView.player2 = Player(name: player2Name, mark: "O")
     }
