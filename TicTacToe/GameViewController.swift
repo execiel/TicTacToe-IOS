@@ -42,70 +42,13 @@ class GameViewController: UIViewController {
         let lastPlayer = currentPlayer
         
         // Add the mark
-        addMark(sender)
-        if(checkForWinOrDraw(lastPlayer)) { return }
+        boardUtil.addMark(self, sender)
+        if(boardUtil.checkForWinOrDraw(self, lastPlayer)) { return }
         
         // Create the bots turn
-        if(isAgainstBot) { addBotMark() }
+        if(isAgainstBot) { boardUtil.addBotMark(self) }
     }
     
-    func addMark(_ sender: UIButton) {
-        // Only continue if board is empty
-        if(sender.title(for: .normal) != nil) { return }
-        
-        // Change button title and font
-        if(currentPlayer.mark == "X") {
-            sender.setTitleColor(UIColor.red, for: .normal)
-        } else {
-            sender.setTitleColor(UIColor.green, for: .normal)
-        }
-        sender.setTitle(currentPlayer.mark, for: .normal)
-        
-        // Switch turn
-        switchTurn()
-    }
-    
-    func addBotMark() {
-        if(currentPlayer.name == "Player") { return }
-        
-        var tilePlaced = false
-        
-        // Place a mark on random empty cell
-        while(!tilePlaced) {
-            let cellIndex = Int.random(in: 0...8)
-            let cell = boardCells[cellIndex]
-            
-            if(cell.title(for: .normal) == nil) {
-                cell.setTitleColor(UIColor.green, for: .normal)
-                cell.setTitle(currentPlayer.mark, for: .normal)
-                tilePlaced = true;
-            }
-        }
-        
-        // Check if it resulted in a win or draw
-        if(checkForWinOrDraw(currentPlayer)) { return }
-        
-        // Switch the turn
-        switchTurn()
-    }
-    
-    func checkForWinOrDraw(_ player: Player) -> Bool {
-        // Check if current player won
-        if(boardUtil.hasPlayerWon(boardCells, player.mark)) {
-            turnLabel.text = "\(player.name) won!"
-            createResetSheet()
-            return true
-        }
-        
-        // Check if board is full
-        if(boardUtil.isBoardFull(boardCells)) {
-            turnLabel.text = "Board is full, it's a draw!"
-            createResetSheet()
-            return true
-        }
-        
-        return false
-    }
     
     // Create actionsheet asking if players want to continue
     func createResetSheet() {
@@ -123,6 +66,7 @@ class GameViewController: UIViewController {
         
         present(actionSheet, animated: true)
     }
+    
     
     func reset() {
         boardUtil.resetCells(boardCells)
